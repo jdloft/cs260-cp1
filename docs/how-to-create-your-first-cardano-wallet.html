@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>How to Create Your First Cardano Wallet · SLATE</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A new Cardano stake pool">
+    <link rel="canonical" href="https://slatepool.io/docs/how-to-create-your-first-cardano-wallet">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/jquery.tocify.css">
+    <link rel="stylesheet" href="/styles.css?v=1.3">
+
+    <!-- Custom Fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Roboto:wght@100" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <!-- Navigation -->
+<nav class="navbar navbar-expand-sm navbar-custom navbar-dark fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand page-scroll" href="/">SLATE</a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav ml-auto">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="nav-item hidden">
+                    <a class="nav-link" href="#page-top"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/docs">Docs</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- TOC -->
+<nav id="toc" class="toc toc-navbar">
+</nav>
+
+
+<div class="center-content">
+  <main>
+    <article class="post">
+      <h1 class="post-title">How to Create Your First Cardano Wallet</h1>
+
+      <time datetime="" class="post-date"></time>
+      <div class="categories">
+        
+        </div>
+
+      <br>
+      <div class="post-content">
+        <p>So you’ve just decided to get into this hot new crypto craze, but what’s the best way to get started? And what are the safest things you can do to make sure you don’t put your money at risk?</p>
+
+<p>If you are new to Cardano and to cryptocurrencies in general, be sure to check out our What is Cardano? article here to understand all of the ins and outs of the ecosystem and how it all connects together.</p>
+
+<p>This tutorial is the first of a three part series, this article will go through the creation of your first wallet either on Yoroi or Daedalus. The second article will discuss how to deposit Ada into your Wallet and a comprehensive comparison between some of the most popular exchanges. The third article will walk through what delegation is and how to delegate your wallet to a particular stake pool, support the community, and make a little return on your Ada while it sits in your wallet.</p>
+
+<h2 id="selecting-your-cardano-wallet-brand">Selecting Your Cardano Wallet “Brand”</h2>
+
+<p>A “wallet” is essentially your private bank account in the crypto space. It comes with a private key that you must keep secret or else others will have access to your funds. Different cryptocurrencies have different wallets, so if you have already created a wallet for Bitcoin or Ethereum, you will need to create a wallet for Cardano as well.</p>
+
+<p>The first step to creating a wallet is deciding which wallet “brand” you want to go with. There are two main wallets in the Cardano ecosystem: Daedalus and Yoroi. This table breaks down the main differences between these two:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Daedalus</th>
+      <th>Yoroi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Version</td>
+      <td>3.3.2</td>
+      <td>4.1.2</td>
+    </tr>
+    <tr>
+      <td>Download</td>
+      <td>Standalone Download</td>
+      <td>Chrome/Firefox Extension, Android/iOS App</td>
+    </tr>
+    <tr>
+      <td>Android/iOS App</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Multiple Wallet Support</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Staking Delegation Support</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Indvidual Stake Pool Information</td>
+      <td>Saturation, Rank, Live Stake, Pool Margin, Pledge, Cost per epoch, Produced blocks, Potential rewards</td>
+      <td>Score, 30d ROA, Share/Pool Size, Costs, Average Cost, Pledge, Number of Produced Blocks</td>
+    </tr>
+    <tr>
+      <td>Wallet Total Cumulative Rewards</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Time to next epoch</td>
+      <td>Yes</td>
+      <td>Yes (shows next Epoch start date)</td>
+    </tr>
+    <tr>
+      <td>Next Two Epochs Delegation Information</td>
+      <td>Yes</td>
+      <td>Yes (next 3)</td>
+    </tr>
+    <tr>
+      <td>Voting Support</td>
+      <td>Yes With Catalyst App</td>
+      <td>Yes With Catalyst App</td>
+    </tr>
+    <tr>
+      <td>Native Asset Support</td>
+      <td>Coming Soon</td>
+      <td>Coming Soon</td>
+    </tr>
+    <tr>
+      <td>Send Native Assets</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Support for Hardware Wallets</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Payment Memos</td>
+      <td>No</td>
+      <td>Yes (Stored only on your Yoroi account for personal use, won’t sync to other accounts)</td>
+    </tr>
+    <tr>
+      <td>Address Book</td>
+      <td>No</td>
+      <td>Yes (Stored with your account)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="getting-started-with-yoroi">Getting Started with Yoroi</h2>
+
+<p>First download the extension from the Chrome Web Store, or Firefox, Android, or iOS if you would prefer. This tutorial will show the process through the Chrome Extension though the process should be similar for the other locations.</p>
+
+<p>Click Add to Chrome
+<img src="/docs/001-how-to-download-wallet/img/image19.png" alt="Tutorial Image"></p>
+
+<p>Clicking on the extension in the extensions bar will bring you to the start up screen. Select your desired language and continue.
+<img src="/docs/001-how-to-download-wallet/img/image22.png" alt="Tutorial Image"></p>
+
+<p>Read the riveting terms of use, accept, and continue.
+<img src="/docs/001-how-to-download-wallet/img/image9.png" alt="Tutorial Image"></p>
+
+<p>If this is your first time, choose simple for the level of complexity
+<img src="/docs/001-how-to-download-wallet/img/image10.png" alt="Tutorial Image"></p>
+
+<p>We recommend allowing payment urls since they can be extremely handy and lessen the likelihood of getting an address typed in wrong. Then click to allow Yoroi to open cardano+web links in Chrome.
+<img src="/docs/001-how-to-download-wallet/img/image2.png" alt="Tutorial Image"></p>
+
+<p>At this point we are ready. If you have made a wallet previously you can restore it here, if this is your first time, we’ll walk through creating a new wallet on Yoroi. Click the center button to create a wallet
+<img src="/docs/001-how-to-download-wallet/img/image12.png" alt="Tutorial Image"></p>
+
+<p>Select Cardano
+<img src="/docs/001-how-to-download-wallet/img/image15.png" alt="Tutorial Image"></p>
+
+<p>Select Create Wallet
+<img src="/docs/001-how-to-download-wallet/img/image1.png" alt="Tutorial Image"></p>
+
+<p>Give your wallet a name, this can be whatever you would like to help you keep track of what this wallet is for versus future wallets you may make. Additionally create a spending password so that if someone else gains access to your computer they won’t be able to spend your Ada without the spending password. Note that this name and password are only known within Yoroi, these are not stored or accessed on the blockchain. If someone gains access to your wallet’s secret hash they can still obtain your Ada regardless of your spending password.
+<img src="/docs/001-how-to-download-wallet/img/image25.png" alt="Tutorial Image"></p>
+
+<p>Your recovery phrase is the most important part of your wallet! Make sure not to show anyone your recovery phrase unless you want them to have unmoderated access to your funds! We at Slate Pool recommend not having any digital record of your recovery phrase ie don’t save it in a google doc or your passwords sheet because someone could gain access to it, or if you happen to have a virus on your computer which is running a keylogger hackers could gain access to it. Better is to only write it down on a piece of paper and keep that paper in your safe or with your other secure records. The only thing better than physically writing your key down is using a hardware wallet to store your key, we will talk about hardware wallets and how to use them in another article.
+<img src="/docs/001-how-to-download-wallet/img/image11.png" alt="Tutorial Image"></p>
+
+<p>Write down your secret phrase, and then Yoroi will confirm you have written it down correctly. ONCE YOU LEAVE THIS SCREEN, YOU CAN NEVER RECEIVE YOUR WALLET PHRASE AGAIN
+<img src="/docs/001-how-to-download-wallet/img/image13.png" alt="Tutorial Image">
+(Wallet phrase shown here is just as an example)</p>
+
+<p>Congrats now you have just created your first Cardano wallet!
+<img src="/docs/001-how-to-download-wallet/img/image18.png" alt="Tutorial Image"></p>
+
+<h2 id="a-quick-tour-of-yoroi">A Quick Tour of Yoroi</h2>
+<p>Whenever you want to launch your Yoroi wallet, click the icon in your list of Chrome extensions.
+When you first load up Yoroi you will see your main dashboard as below:
+<img src="/docs/001-how-to-download-wallet/img/image7.png" alt="Tutorial Image"></p>
+
+<p>Here you can see quick details about the status of your wallet, upcoming potential rewards, and other important details (we’ll learn how to add funds to our new wallet in the next tutorial). You can have multiple Ada wallets connected in your Yoroi account by clicking “Back to my wallets” at the top and following a similar set up as before to add an additional wallet. Additional wallets are helpful if you would like to keep separate wallets with funds that are to be used for different purposes, if you have a wallet you would like to share with a partner, a wallet for particular businesses–essentially anything you’d normally open a traditional checking or savings account for.</p>
+
+<p>At the top is the main control bar for all the things you’d need to do with your wallet:
+<img src="/docs/001-how-to-download-wallet/img/image14.png" alt="Tutorial Image"></p>
+
+<p>The Transactions pane shows the list of all most recent transactions with your wallet. Once again this transaction history is stored on the blockchain, so if you use your restore phrase to open up your wallet again later this transaction history will all be maintained.</p>
+
+<p>Next if you would like to send Ada to another wallet, you may do so under the send tab:
+<img src="/docs/001-how-to-download-wallet/img/image16.png" alt="Tutorial Image"></p>
+
+<p>Note: You will NEVER use your secret phrase to send or receive money! NEVER give out your secret phrase, if someone asks you for it they are trying to scam you!</p>
+
+<p>In order to receive money you will give a public hash of your key to the person you would like to receive money from:
+<img src="/docs/001-how-to-download-wallet/img/image21.png" alt="Tutorial Image"></p>
+
+<p>You can get a new generated hash from this page, use the copy button to copy the phrase, or scan the QR Code to obtain the phrase. Other users can enter this phrase on their wallet to send you money.</p>
+
+<p>The last two tabs are for catalyst voting, and for delegating your wallet to a stake pool. We will have a separate article that goes into all the details about how to delegate and important points to consider when delegating to a pool.
+<img src="/docs/001-how-to-download-wallet/img/image27.png" alt="Tutorial Image"></p>
+
+<h2 id="getting-started-with-daedalus">Getting Started with Daedalus</h2>
+
+<p>Download the installer at <a href="https://daedaluswallet.io/en/download/" target="_blank" rel="noopener noreferrer">https://daedaluswallet.io/en/download/</a> Make sure you are at the correct webpage for the download!
+<img src="/docs/001-how-to-download-wallet/img/image24.png" alt="Tutorial Image"></p>
+
+<p>For simplicity in this tutorial we will skip verifying the download with a hash signature, however for best practice this is recommended and can be done by following the tutorial on the daedalus website.</p>
+
+<p>Run the installer, when it finishes, launch Daedalus Mainnet. The installer most likely created a desktop icon, or you can search for Daedalus Mainnet in your programs list.</p>
+
+<p>The first time you start up Daedalus you will be prompted to enter your desired date and time formatting.
+<img src="/docs/001-how-to-download-wallet/img/image29.png" alt="Tutorial Image"></p>
+
+<p>Read and agree to the riveting terms of service:
+<img src="/docs/001-how-to-download-wallet/img/image28.png" alt="Tutorial Image"></p>
+
+<p>Next you should see the main screen where you will be able to either create a new Cardano Wallet, or you may add an existing wallet that you created previously via the secure key phrase. The first time you run Daedalus it may take some time for it to sync up with the mainnet. This is fine and normal, just let daedalus do it’s thing in the background. Daedalus will resume where it was previously if you turn it off in the middle of syncing.</p>
+
+<p>Click the button to create a new Cardano wallet.
+<img src="/docs/001-how-to-download-wallet/img/image3.png" alt="Tutorial Image"></p>
+
+<p>Enter a name for your wallet that will help you remember what this wallet is for. Additionally add a spending password so that if someone gains access to your computer they will be unable to spend any of your Ada in the wallet. The wallet name and spending password are for your convenience, and are not stored on Cardano blockchain in any way. If someone gains access to your wallet’s secret key phrase (which we will see shortly) they will have complete access to your wallet funds regardless of whether or not they know your spending password.</p>
+
+<p>Click Create Shelley Wallet
+<img src="/docs/001-how-to-download-wallet/img/image23.png" alt="Tutorial Image"></p>
+
+<p>Click to confirm that you understand the importance of keeping your recovery phrase absolutely secure, and then click to continue.
+<img src="/docs/001-how-to-download-wallet/img/image20.png" alt="Tutorial Image"></p>
+
+<p>Write down the list of 24 words which is your wallet’s recovery phrase. This phrase will allow you to gain access to the wallet again, or to add the wallet to a new computer in the future. IF SOMEONE GAINS ACCESS TO YOUR RECOVERY PHRASE THEY GAIN ACCESS TO YOUR FUNDS. We at Slate Pool recommend writing down your recovery phrase on paper and keeping the paper in your safe with your other secure records, this is because having any form of digital copy of your key can be very dangerous if someone gains access to your google account or if there happens to be a malicious keylogger on your system. For even better security you may wish to use a hardware wallet, to store your recovery phrases, that is beyond the scope of this tutorial but we will have another tutorial that discusses how to use hardware wallets. Additionally, DO NOT LOSE YOUR PHRASE, YOU WILL LOSE ALL ACCESS TO YOUR FUNDS.
+<img src="/docs/001-how-to-download-wallet/img/image4.png" alt="Tutorial Image"></p>
+
+<p>Once you have written down your recovery phrase, click to continue</p>
+
+<p>Retype your recovery phrase to confirm you have written it down correctly. Accept that you understand how important it is to keep your phrase secure and not lose it, then click to continue.
+<img src="/docs/001-how-to-download-wallet/img/image17.png" alt="Tutorial Image"></p>
+
+<p>Congrats! You’ve just created your new wallet, let the wallet sync with the blockchain and you will be all good to go. It may take some time for your new wallet to sync with the blockchain depending on your computer and internet connection. It is fine if you need to close daedalus and resume the process where it left off later.
+<img src="/docs/001-how-to-download-wallet/img/image5.png" alt="Tutorial Image"></p>
+
+<h2 id="a-quick-tour-of-daedalus">A Quick Tour of Daedalus</h2>
+<p>On the main screen there is a lot that you can do once opening up Daedalus.
+<img src="/docs/001-how-to-download-wallet/img/image8.png" alt="Tutorial Image"></p>
+
+<p>From the top bar you have quick access to the selected wallet’s info including sending and receiving funds to that wallet and seeing the complete list of transactions associated with that wallet.
+<img src="/docs/001-how-to-download-wallet/img/image26.png" alt="Tutorial Image"></p>
+
+<p>On the left you have access to all of your wallets, the delegation center, testnet rewards (if this is your first wallet you don’t need to worry about that one), catalyst voting, and theme settings.
+<img src="/docs/001-how-to-download-wallet/img/image6.png" alt="Tutorial Image"></p>
+
+<p>We’ll go through the details of how to delegate in another article, but on the delegation page you can see all of the various details for how to delegate your wallet to a stake pool.
+<img src="/docs/001-how-to-download-wallet/img/image30.png" alt="Tutorial Image"></p>
+
+<p>We hope this article has helped you to jump into the new and vibrant world of cryptocurrencies! If this article has helped you, please share Slate Pool resources with your friends and please consider delegating to Slate Pool so that we can continue to provide articles and resources to the community.</p>
+      </div>
+
+      
+      
+      
+
+      
+        <hr>
+        <h3>Series</h3>
+        <h4 class="series-title">Cardano Foundational Concepts</h4>
+        <div>Fundamental Cardano concepts that everyone should know.</div>
+        
+        <div class="series-box">
+    <ul class="series-list">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        <li>Part 1 -
+        
+            This Article
+        
+        </li>
+    
+    
+    </ul>
+</div>
+
+      
+    </article>
+  </main>
+</div>
+        <!-- Footer -->
+<footer>
+</footer>
+
+         <!-- jQuery Version 1.11.0 -->
+<script src="/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/js/jquery.easing.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="/js/jquery-ui.min.js"></script>
+
+<!-- jQuery Tocify -->
+<script src="/js/jquery.tocify.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/grayscale.js"></script>
+
+    </body>
+</html>
